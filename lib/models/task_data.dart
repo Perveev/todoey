@@ -4,9 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:todoey/models/task.dart';
 
 class TaskData extends ChangeNotifier {
-  List<Task> _tasks = [
-    Task(name: "name"),
-  ];
+  List<Task> _tasks = [];
 
   get taskCount => tasks.length;
 

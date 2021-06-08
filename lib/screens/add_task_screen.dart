@@ -13,7 +13,7 @@ class AddTaskScreen extends StatelessWidget {
     return Container(
       color: myColors.buttomSheetBackground,
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(20.0),
@@ -44,7 +44,7 @@ class AddTaskScreen extends StatelessWidget {
                       Provider.of<TaskData>(context, listen: false).addTask(name);
                       Navigator.pop(context);
                     },
-                    child: Text(
+                    child:const Text(
                       'Add',
                       style: TextStyle(
                         color: Colors.white,
