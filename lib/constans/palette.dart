@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class myColors {
+class Palette {
   static const Color buttomSheetBackground = Color(0xFF757575);
 }
 

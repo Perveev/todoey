@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todoey/constans/colors.dart';
+import 'package:todoey/constans/palette.dart';
 import 'package:todoey/constans/styles.dart';
+import 'package:todoey/models/new_task.dart';
 import 'package:todoey/models/task_data.dart';
 
-// ignore: must_be_immutable
 class AddTaskScreen extends StatelessWidget {
-  String name = '';
+  final newTask = NewTask();
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: myColors.buttomSheetBackground,
+      color: Palette.buttomSheetBackground,
       child: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(20.0),
@@ -31,7 +31,7 @@ class AddTaskScreen extends StatelessWidget {
                 style: TextStyles.BottomSheetlabel,
               ),
               TextField(
-                onChanged: (newValue) => name = newValue,
+                onChanged: (newValue) => newTask.name = newValue,
                 autofocus: true,
                 textAlign: TextAlign.center,
               ),
@@ -41,10 +41,10 @@ class AddTaskScreen extends StatelessWidget {
                   color: Colors.lightBlueAccent,
                   child: TextButton(
                     onPressed: () {
-                      Provider.of<TaskData>(context, listen: false).addTask(name);
+                      Provider.of<TaskData>(context, listen: false).addTask(newTask.name);
                       Navigator.pop(context);
                     },
-                    child:const Text(
+                    child: Text(
                       'Add',
                       style: TextStyle(
                         color: Colors.white,
